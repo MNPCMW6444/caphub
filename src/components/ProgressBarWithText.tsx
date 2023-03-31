@@ -55,8 +55,15 @@ const Text = styled.div`
   text-align: center;
 `;
 
-const randomSentence = (sentences: any) =>
-  sentences[Math.floor(Math.random() * sentences.length)];
+const randomSentence = (sentences: any) => {
+  let randomSentenceTrial =
+    sentences[Math.floor(Math.random() * sentences.length)];
+  while (randomSentenceTrial.includes("undefined")) {
+    randomSentenceTrial =
+      sentences[Math.floor(Math.random() * sentences.length)];
+  }
+  return randomSentenceTrial;
+};
 
 const ProgressBarWithText = ({ founder }: any) => {
   const [progress, setProgress] = useState(0);
