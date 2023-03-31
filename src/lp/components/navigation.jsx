@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "./../assets/logo.png";
 
 export const Navigation = (props) => {
   return (
@@ -18,7 +19,7 @@ export const Navigation = (props) => {
             <span className="icon-bar"></span>{" "}
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
-            CapHub
+            <img src={logo} width="100vw" />
           </a>{" "}
         </div>
 
