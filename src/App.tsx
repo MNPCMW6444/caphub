@@ -7,7 +7,7 @@ const App = () => {
 
   return x ? (
     x === "vcs" ? (
-      <POC vcs />
+      <POC isvcs />
     ) : (
       <POC />
     )

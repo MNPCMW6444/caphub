@@ -5,6 +5,7 @@ import { Model } from "survey-core";
 import axios from "axios";
 import UserContext from "../context/UserContext";
 import ProgressBarWithText from "./ProgressBarWithText";
+import domain from "../util/domain";
 
 export default function PPSurvey({ surveyJson, type }: any) {
   const { user } = useContext(UserContext);
@@ -15,7 +16,7 @@ export default function PPSurvey({ surveyJson, type }: any) {
     ({ data }: any) => {
       saveData(data);
 
-      axios.post("/save" + type, { owner: user, data });
+      axios.post(domain + "save" + type, { owner: user, data });
     },
     [user]
   );
