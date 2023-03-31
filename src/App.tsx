@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import POC from "./components/POC";
 import "./App.css"; // Import custom styles
+import "./custom-styles.css";
 
 const App = () => {
   const [x, setX] = useState("");
