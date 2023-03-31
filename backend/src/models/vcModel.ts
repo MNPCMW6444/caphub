@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const vcSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
+  name: { type: String },
+  email: { type: String, unique: true },
   phone: String,
-  firmName: { type: String, required: true },
+  firmName: { type: String },
   investmentFocus: String,
   industriesOfInterest: [String],
   investmentSize: Number,
