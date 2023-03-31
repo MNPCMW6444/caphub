@@ -38,7 +38,7 @@ const vcs = {
       inputType: "number",
     },
     {
-      type: "radiogroup",
+      type: "checkbox",
       name: "preferredCompanyStage",
       title: "Preferred Company Stage",
       choices: [
@@ -57,7 +57,7 @@ const vcs = {
       placeHolder: "Separate company names with commas",
     },
     {
-      type: "radiogroup",
+      type: "checkbox",
       name: "preferredMetric",
       title: "Preferred Key Metric",
       choices: [
@@ -77,6 +77,12 @@ const founders = {
     { type: "text", name: "name", title: "Name", isRequired: true },
     { type: "text", name: "email", title: "Email", isRequired: true },
     { type: "text", name: "phone", title: "Phone Number" },
+    {
+      type: "text",
+      name: "title",
+      title: "Founder's Title",
+      isRequired: true,
+    },
     {
       type: "text",
       name: "startupName",
@@ -156,6 +162,99 @@ const founders = {
       title: "Gross Margin (in %)",
       inputType: "number",
     },
+    {
+      type: "text",
+      name: "fundingAmount",
+      title: "How much money do you need?",
+      inputType: "number",
+    },
+    {
+      type: "radiogroup",
+      name: "creditScore",
+      title: "How's your credit score?",
+      choices: [
+        "500 or below",
+        "500-575",
+        "575-650",
+        "650-680",
+        "680-720",
+        "720-760",
+        "760+",
+      ],
+    },
+    {
+      type: "radiogroup",
+      name: "bankruptcy",
+      title: "Have you had a bankruptcy in the last 5 Years?",
+      choices: ["Yes", "No"],
+    },
+    {
+      type: "text",
+      name: "businessStart",
+      title: "When did you start your business?",
+    },
+    {
+      type: "file",
+      name: "dataRequest2",
+      title: "Actual P&L, BS, and CF statements on a monthly basis in an excel spreadsheet for the past 24 months. Please make sure S&M, R&D and G&A include payroll and salaries. If not, please provide payroll and salaries expenses breakdown by each department (S&M, R&D, G&A, etc.)",
+      accept: ".xlsx, .xls",
+    },
+    {
+      type: "file",
+      name: "dataRequest3a",
+      title: "Revenue by client: Please provide a spreadsheet with sales data by a customer for the past 36 months that reconcile to the P&L with the following fields: Date, Client ID/ Name, Amount, Currency, and Revenue Stream.",
+      accept: ".xlsx, .xls",
+    },
+    {
+      type: "file",
+      name: "dataRequest3b",
+      title: "Revenue by client: Alternatively, please provide an invoices file that includes all invoices issued in the past 36 months, that reconcile to the financial statements. Invoice file spreadsheet should include – date, Invoice ID, unique Customer ID (that will enable to identify each client separately and not by the payment method such as Shopify/ Stripe/ PayPal/ etc.), Amount paid, currency, Invoice type or revenue stream (Monthly/quarterly/annually, other, etc.).",
+      accept: ".xlsx, .xls",
+    },
+    {
+      type: "file",
+      name: "dataRequest4",
+      title: "Monthly /Quarterly consolidated business plan including P&L and CF statements in an excel spreadsheet for the upcoming 4 years (48 months). Please make sure it is consistent with the historical P&L and CF provided so far.",
+      accept: ".xlsx, .xls",
+    },
+    {
+      type: "text",
+      name: "dataRequest5",
+      title: "Up-to-date cap table.",
+    },
+    {
+      type: "file",
+      name: "dataRequest6",
+      title: "Historical funding rounds – please provide a table including information regarding the historical funding rounds – including for each round the raised amount, name of round (A, B, CLA, etc.), date, pre-money valuation, and main investors participating in each round.",
+      accept: ".xlsx, .xls",
+    },
+    {
+      type: "file",
+      name: "dataRequest7",
+      title: "Audited financials - Please provide the last 2 (or more) audited reports.",
+      accept: ".pdf",
+    },
+    {
+      type: "text",
+      name: "dataRequest8",
+      title: "Debt (if relevant) - Please specify the main terms – current debt outstanding, type (LOC or term loan), when taken, repayments schedule, interest, total facility amount, amounts withdrawn to date, any liens regarding this facility, or any other liens on the company's assets.",
+    },
+    {
+      type: "text",
+      name: "dataRequest9",
+      title: "Group structure – please provide a full group structure, including the country of incorporation of each entity, and revenue allocations between the entities.",
+    },
+    {
+      type: "text",
+      name: "additional1",
+      title: "Who is the end customer (b2",
+    },
+    {
+      type: "text",
+      name: "additional2",
+      title: "What is the Business model (contractual, subscription… )",
+    },
+
   ],
 };
 
