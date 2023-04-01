@@ -11,6 +11,7 @@ import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./Lp.css";
+import App from "../App";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -23,9 +24,13 @@ const Lp = () => {
     setLandingPageData(JsonData);
   }, []);
 
-  return (
+  const [isApp, setIsApp] = useState(false);
+
+  return isApp ? (
+    <App />
+  ) : (
     <div>
-      <Navigation />
+      <Navigation setIsApp={setIsApp} />
       <Header data={landingPageData.Header} />
       <Features data={landingPageData.Features} />
       <About data={landingPageData.About} />

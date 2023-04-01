@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./../assets/logo.png";
 
-export const Navigation = (props) => {
+export const Navigation = ({ setIsApp }) => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -28,6 +28,14 @@ export const Navigation = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
+            <li>
+              <button
+                className="btn btn-primary"
+                onClick={() => setIsApp(true)}
+              >
+                Apply Now
+              </button>
+            </li>
             <li>
               <a href="#features" className="page-scroll">
                 Features

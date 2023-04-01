@@ -30,25 +30,7 @@ const App = () => {
       >
         {/* ... existing code */}
 
-        <Typography
-          className="header font-roboto"
-          variant="h4"
-          align="center"
-          gutterBottom
-        >
-          Are you a founder or a VC manager?
-        </Typography>
         <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={12} sm={6} md={4}>
-            <Button
-              className="button-primary"
-              variant="contained"
-              onClick={() => setX("vcs")}
-              fullWidth
-            >
-              VC Manager
-            </Button>
-          </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <Button
               className="button-primary"
@@ -56,7 +38,7 @@ const App = () => {
               onClick={() => setX("founders")}
               fullWidth
             >
-              Founder
+              Start Application
             </Button>
           </Grid>
         </Grid>
