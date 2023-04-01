@@ -55,20 +55,27 @@ const Text = styled.div`
   text-align: center;
 `;
 
-const randomSentence = (sentences: any) =>
-  sentences[Math.floor(Math.random() * sentences.length)];
+const randomSentence = (sentences: any) => {
+  let randomSentenceTrial =
+    sentences[Math.floor(Math.random() * sentences.length)];
+  while (randomSentenceTrial.includes("undefined")) {
+    randomSentenceTrial =
+      sentences[Math.floor(Math.random() * sentences.length)];
+  }
+  return randomSentenceTrial;
+};
 
 const ProgressBarWithText = ({ founder }: any) => {
   const [progress, setProgress] = useState(0);
 
   const sentences = [
-    `Searching for VC firms that specialize in ${founder.companyStage} funding...`,
+    `Searching for VC firms that specialize in ${founder.fundingStage} funding...`,
     `Analyzing potential VC partners based on investment focus and portfolio...`,
     `Checking compatibility with VC firms that invest in ${founder.industry}...`,
-    `Searching for VC firms that prefer ${founder.preferredCompanyStage} companies...`,
-    `Researching VC firms with investment sizes of at least ${founder.investmentSize}...`,
+    `Searching for VC firms that prefer ${founder.fundingStage} companies...`,
+    `Researching VC firms with investment sizes of at least ${founder.fundingAmount}...`,
     `Reviewing VC firms' past investment performance and success...`,
-    `Searching for VC firms that have invested in companies with a similar company stage and funding amount...`,
+    `Searching for VC firms that have invested in companies with a similar funding stage and funding amount...`,
     `Reviewing portfolio companies of potential VC partners for fit with your company...`,
   ];
 
