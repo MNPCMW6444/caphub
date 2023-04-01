@@ -108,7 +108,8 @@ const founders = {
           name: "title",
           title: "Founder's Title",
           isRequired: true,
-          description: "Please enter the title of the founder (e.g. CEO, CTO, CFO).",
+          description:
+            "Please enter the title of the founder (e.g. CEO, CTO, CFO).",
         },
         {
           type: "text",
@@ -139,14 +140,16 @@ const founders = {
             "Other",
           ],
           isRequired: true,
-          description: "Please select the industry/sector that best describes your startup.",
+          description:
+            "Please select the industry/sector that best describes your startup.",
         },
         {
           type: "text",
           name: "fundingRaised",
           title: "Funding Raised (USD)",
           inputType: "number",
-          description: "Please enter the total amount of funding raised by your startup in US dollars.",
+          description:
+            "Please enter the total amount of funding raised by your startup in US dollars.",
         },
         {
           type: "radiogroup",
@@ -159,7 +162,7 @@ const founders = {
             "Series B",
             "Series C and beyond",
           ],
-          description: "Please select the funding stage of your startup."
+          description: "Please select the funding stage of your startup.",
         },
       ],
     },
@@ -172,7 +175,8 @@ const founders = {
           title: "Briefly describe your startup (1-2 sentences)",
           maxLength: 280,
           isRequired: true,
-          description: "Please provide a brief description of your startup (1-2 sentences)."
+          description:
+            "Please provide a brief description of your startup (1-2 sentences).",
         },
       ],
     },
@@ -184,35 +188,38 @@ const founders = {
           name: "mrr",
           title: "Monthly Recurring Revenue (MRR) (USD)",
           inputType: "number",
-          description: "Please enter your monthly recurring revenue in US dollars."
+          description:
+            "Please enter your monthly recurring revenue in US dollars.",
         },
         {
           type: "text",
           name: "cac",
           title: "Customer Acquisition Cost (CAC) (USD)",
           inputType: "number",
-          description: "Please enter your customer acquisition cost in US dollars."
+          description:
+            "Please enter your customer acquisition cost in US dollars.",
         },
         {
           type: "text",
           name: "ltv",
           title: "Customer Lifetime Value (LTV) (USD)",
           inputType: "number",
-          description: "Please enter your customer lifetime value in US dollars."
+          description:
+            "Please enter your customer lifetime value in US dollars.",
         },
         {
           type: "text",
           name: "churnRate",
           title: "Churn Rate (in %)",
           inputType: "number",
-          description: "Please enter your churn rate as a percentage."
+          description: "Please enter your churn rate as a percentage.",
         },
         {
           type: "text",
           name: "grossMargin",
           title: "Gross Margin (in %)",
           inputType: "number",
-          description: "Please enter your gross margin as a percentage."
+          description: "Please enter your gross margin as a percentage.",
         },
       ],
     },
@@ -224,7 +231,8 @@ const founders = {
           name: "fundingAmount",
           title: "How much money do you need?",
           inputType: "number",
-          description: "Please enter the amount of funding you are seeking in USD."
+          description:
+            "Please enter the amount of funding you are seeking in USD.",
         },
         {
           type: "radiogroup",
@@ -239,14 +247,14 @@ const founders = {
             "720-760",
             "760+",
           ],
-          description: "Please select your credit score range."
+          description: "Please select your credit score range.",
         },
         {
           type: "radiogroup",
           name: "bankruptcy",
           title: "Bankruptcy in Last 5 Years?",
           choices: ["Yes", "No"],
-          description: "Have you filed for bankruptcy in the last 5 years?"
+          description: "Have you filed for bankruptcy in the last 5 years?",
         },
       ],
     },
@@ -263,28 +271,32 @@ const founders = {
           type: "file",
           name: "dataRequest2",
           title: "Actual P&L, BS, and CF statements for the past 24 months",
-          description: "Please upload your company's P&L, balance sheet, and cash flow statements for the past 24 months.",
+          description:
+            "Please upload your company's P&L, balance sheet, and cash flow statements for the past 24 months.",
           accept: ".xlsx, .xls",
         },
         {
           type: "file",
           name: "dataRequest3a",
           title: "Revenue by Client (Sales Data)",
-          description: "Please provide a spreadsheet with sales data by a customer for the past 36 months that reconcile to the P&L.",
+          description:
+            "Please provide a spreadsheet with sales data by a customer for the past 36 months that reconcile to the P&L.",
           accept: ".xlsx, .xls",
         },
         {
           type: "file",
           name: "dataRequest3b",
           title: "Revenue by Client(Sales Data) - Breakdown",
-          description: "Please provide a breakdown of your revenue by client for the past 36 months that reconciles to the P&L.",
+          description:
+            "Please provide a breakdown of your revenue by client for the past 36 months that reconciles to the P&L.",
           accept: ".xlsx, .xls",
         },
         {
           type: "file",
           name: "dataRequest4",
           title: "Headcount and Salaries",
-          description: "Please provide a spreadsheet with headcount and salaries by department for the past 24 months.",
+          description:
+            "Please provide a spreadsheet with headcount and salaries by department for the past 24 months.",
           accept: ".xlsx, .xls",
         },
         {
@@ -298,7 +310,8 @@ const founders = {
           type: "file",
           name: "dataRequest6",
           title: "Leases and Contracts",
-          description: "Please provide copies of leases and material contracts.",
+          description:
+            "Please provide copies of leases and material contracts.",
           accept: ".pdf",
         },
         {
@@ -319,21 +332,23 @@ const founders = {
           type: "file",
           name: "dataRequest9",
           title: "Organizational Chart",
-          description: "Please provide an organizational chart for your company.",
+          description:
+            "Please provide an organizational chart for your company.",
           accept: ".pdf, .pptx, .ppt",
         },
         {
           type: "file",
           name: "dataRequest10",
           title: "Insurance Policies",
-          description: "Please provide copies of your company's insurance policies.",
+          description:
+            "Please provide copies of your company's insurance policies.",
           accept: ".pdf",
         },
         {
           type: "submit",
           name: "submit",
           title: "Submit",
-        }
+        },
       ],
     },
     {
@@ -359,13 +374,14 @@ const founders = {
         },
       ],
     },
-
   ],
   // ... the rest of the object (pages array)
 };
 
 function updateProgressBar(survey: Survey.Model) {
-  const progressBar = document.querySelector(".sv-progress-buttons") as HTMLElement;
+  const progressBar = document.querySelector(
+    ".sv-progress-buttons"
+  ) as HTMLElement;
   const totalPages = survey.visiblePages.length;
   const currentPageIndex = survey.currentPageNo;
 
@@ -375,15 +391,11 @@ function updateProgressBar(survey: Survey.Model) {
 }
 
 const surveyInstance = new Survey.Model(founders);
-surveyInstance.onComplete.add(function (result: any) {
-  // our existing onComplete logic
-});
 
 updateProgressBar(surveyInstance);
 
 Survey.SurveyNG.render("surveyElement", { model: surveyInstance });
 
 //
-
 
 export { vcs, founders };
