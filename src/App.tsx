@@ -55,7 +55,7 @@ const App = () => {
           align="center"
           gutterBottom
         >
-          CapHub is an innovative funding solutions provider for startups and
+          CapHub is an innovative funding solutions provider for companys and
           businesses of all sizes and shapes. Our AI-driven platform matches you
           with the best funding options available based on your unique situation
           and needs.
