@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 export const Header = (props) => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  const handleScroll = () => {
+    const currentScrollPosition = window.pageYOffset;
+    setVisible(currentScrollPosition > 100);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header id="header">
+    <header id="header" className={visible ? "fixed-header" : ""}>
       <div className="intro">
         <div className="overlay">
           <div className="container">
