@@ -89,10 +89,10 @@ const founders = {
           type: "html",
           name: "introText",
           html: `
-            <h2>Welcome to the Founder Survey</h2>
-            <p>This survey is designed to gather information about your startup, financial metrics, and supporting documents for the due diligence process.</p>
-            <p>Please ensure that you have all the necessary information and documents ready before you begin. The survey is divided into multiple sections, each focusing on a different aspect of your startup. You can navigate between sections using the progress bar at the top of the page.</p>
-            <p>Once you have completed the survey, you will be able to submit it for review by the due diligence team. Make sure to provide accurate and complete information to ensure a smooth and efficient process.</p>
+            <h2>Welcome to the Founder Application</h2>
+            <p>This application is designed to gather information about your startup, financial metrics, and supporting documents for the due diligence process.</p>
+            <p>Please ensure that you have all the necessary information and documents ready before you begin. The application is divided into multiple sections, each focusing on a different aspect of your startup. You can navigate between sections using the progress bar at the top of the page.</p>
+            <p>Once you have completed the application, you will be able to submit it for review by the due diligence team. Make sure to provide accurate and complete information to ensure a smooth and efficient process.</p>
           `,
         },
       ],
