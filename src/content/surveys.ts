@@ -74,7 +74,7 @@ const vcs = {
 };
 
 const founders = {
-  title: "Founder Survey",
+  title: "Founder Application",
   showProgressBar: "top",
   progressBarType: "buttons",
   onCurrentPageChanged: function (survey: Survey.Model) {
