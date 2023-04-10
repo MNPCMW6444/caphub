@@ -1,5 +1,3 @@
-import { Survey } from "survey-react-ui";
-
 const vcs = {
   title: "VC Survey",
   elements: [
@@ -77,7 +75,6 @@ const founders = {
   title: "Founder Application",
   showProgressBar: "top",
   progressBarType: "buttons",
-
   pages: [
     {
       name: "intro",
