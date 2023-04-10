@@ -1,4 +1,4 @@
-import * as Survey from "survey-angular";
+import { Survey } from "survey-react-ui";
 
 const vcs = {
   title: "VC Survey",
@@ -77,9 +77,7 @@ const founders = {
   title: "Founder Application",
   showProgressBar: "top",
   progressBarType: "buttons",
-  onCurrentPageChanged: function (survey: Survey.Model) {
-    updateProgressBar(survey);
-  },
+
   pages: [
     {
       name: "intro",
@@ -376,25 +374,5 @@ const founders = {
     },
   ],
 };
-
-function updateProgressBar(survey: Survey.Model) {
-  const progressBar = document.querySelector(
-    ".sv-progress-buttons"
-  ) as HTMLElement;
-  const totalPages = survey.visiblePages.length;
-  const currentPageIndex = survey.currentPageNo;
-
-  if (progressBar) {
-    progressBar.style.width = ((currentPageIndex + 1) / totalPages) * 100 + "%";
-  }
-}
-
-const surveyInstance = new Survey.Model(founders);
-
-updateProgressBar(surveyInstance);
-
-Survey.SurveyNG.render("surveyElement", { model: surveyInstance });
-
-//
 
 export { vcs, founders };
