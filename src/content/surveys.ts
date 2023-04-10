@@ -375,7 +375,6 @@ const founders = {
       ],
     },
   ],
-  // ... the rest of the object (pages array)
 };
 
 function updateProgressBar(survey: Survey.Model) {
