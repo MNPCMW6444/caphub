@@ -115,6 +115,20 @@ const founders = {
         },
         { type: "text", name: "website", title: "Website" },
         { type: "text", name: "location", title: "Location", isRequired: true },
+        {
+          type: "dropdown",
+          name: "primaryGoal",
+          title: "Primary Goal of Your Startup",
+          choices: [
+            "Customer Acquisition",
+            "Product Development",
+            "Scaling",
+            "Profitability",
+            "Other",
+          ],
+          isRequired: true,
+          description: "Please select the primary goal of your startup.",
+        },
       ],
     },
     {
@@ -171,7 +185,7 @@ const founders = {
           maxLength: 280,
           isRequired: true,
           description:
-            "Please provide a brief description of your startup (1-2 sentences).",
+            "Please provide a brief description of your startup, focusing on your primary goal (1-2 sentences).",
         },
       ],
     },
@@ -216,8 +230,17 @@ const founders = {
           inputType: "number",
           description: "Please enter your gross margin as a percentage.",
         },
+        {
+          type: "text",
+          name: "growthRate",
+          title: "Growth Rate (in %)",
+          inputType: "number",
+          description:
+            "Please enter your startup's growth rate as a percentage, according to your primary goal.",
+        },
       ],
     },
+
     {
       name: "Financial Requirements",
       elements: [
@@ -338,6 +361,27 @@ const founders = {
           description:
             "Please provide copies of your company's insurance policies.",
           accept: ".pdf",
+        },
+        {
+          type: "submit",
+          name: "submit",
+          title: "Submit",
+        },
+        {
+          type: "file",
+          name: "marketResearch",
+          title: "Market Research",
+          description:
+            "Please upload any market research, customer feedback, or competitor analysis that supports your startup's primary goal.",
+          accept: ".pdf, .docx, .doc, .xlsx, .xls",
+        },
+        {
+          type: "file",
+          name: "productRoadmap",
+          title: "Product Roadmap",
+          description:
+            "Please upload your product roadmap, outlining how you plan to achieve your startup's primary goal.",
+          accept: ".pdf, .docx, .doc, .pptx, .ppt",
         },
         {
           type: "submit",
