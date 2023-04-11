@@ -1,15 +1,9 @@
-
 .DS_Store
 .env
-backend/.env
-backend/dist/index.js
-backend/dist/models/founderModel.js
-backend/dist/models/userModel.js
-backend/dist/models/vcModel.js
+
 **/**/node_modules
+**/**/package-lock.json
 
-backend/package-lock.json
+backend/dist
+/build
 
-package-lock.json
-src/.DS_Store
-node_modules
