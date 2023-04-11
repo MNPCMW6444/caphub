@@ -391,7 +391,7 @@ const founders = {
       ],
     },
     {
-      name: "conclusion",
+      name: "Conclusion",
       title: "Conclusion",
       elements: [
         {
