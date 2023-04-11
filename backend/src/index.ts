@@ -34,11 +34,10 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5999",
-      "https://caphub.flexboxtorchy.com",
-      "https://app.profitpal.com",
-    ],
+    origin:
+      process.env.NODE_ENV === "development"
+        ? ["http://localhost:5999"]
+        : ["https://app.caphub-funding.com"],
     credentials: true,
   })
 );
