@@ -15,7 +15,7 @@ let mainDbStatus = false;
 
 const connectToDBs = () => {
   try {
-    mongoose.connect("" + process.env.MONGO, {
+    mongoose.connect("" + process.env.SAFE, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     } as ConnectOptions);
