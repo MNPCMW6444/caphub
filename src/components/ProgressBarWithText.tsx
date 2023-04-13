@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -68,16 +68,19 @@ const randomSentence = (sentences: any) => {
 const ProgressBarWithText = ({ founder }: any) => {
   const [progress, setProgress] = useState(0);
 
-  const sentences = [
-    `Searching for VC firms that specialize in ${founder.fundingStage} funding...`,
-    `Analyzing potential VC partners based on investment focus and portfolio...`,
-    `Checking compatibility with VC firms that invest in ${founder.industry}...`,
-    `Searching for VC firms that prefer ${founder.fundingStage} companies...`,
-    `Researching VC firms with investment sizes of at least ${founder.fundingAmount}...`,
-    `Reviewing VC firms' past investment performance and success...`,
-    `Searching for VC firms that have invested in companies with a similar funding stage and funding amount...`,
-    `Reviewing portfolio companies of potential VC partners for fit with your company...`,
-  ];
+  const sentences = useMemo(
+    () => [
+      `Searching for VC firms that specialize in ${founder.fundingStage} funding...`,
+      `Analyzing potential VC partners based on investment focus and portfolio...`,
+      `Checking compatibility with VC firms that invest in ${founder.industry}...`,
+      `Searching for VC firms that prefer ${founder.fundingStage} companies...`,
+      `Researching VC firms with investment sizes of at least ${founder.fundingAmount}...`,
+      `Reviewing VC firms' past investment performance and success...`,
+      `Searching for VC firms that have invested in companies with a similar funding stage and funding amount...`,
+      `Reviewing portfolio companies of potential VC partners for fit with your company...`,
+    ],
+    [founder]
+  );
 
   const [currentSentence, setCurrentSentence] = useState<any>(
     randomSentence(sentences)
@@ -87,9 +90,8 @@ const ProgressBarWithText = ({ founder }: any) => {
     const timer = setInterval(() => {
       setProgress((progress) => Math.min(progress + 1, 100));
     }, 300);
-
     return () => clearInterval(timer);
-  }, []);
+  }, [sentences]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -97,7 +99,7 @@ const ProgressBarWithText = ({ founder }: any) => {
     }, Math.random() * 4000 + 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [sentences]);
 
   return (
     <Container>
