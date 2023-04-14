@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import VC from "./models/vcModel";
 
 import founderRouter from "./routers/founderRouter";
-import Lender from "@models/lenderModel";
+import Lender from "./models/founderModel";
 
 const app = express();
 const port = process.env.PORT || 6555;
