@@ -27,7 +27,7 @@ const connectToDBs = () => {
     mainDbStatus = false;
   }
   if (!mainDbStatus) setTimeout(connectToDBs, 180000);
-  else console.log("connected to mongo");
+  else console.log("connected to safe-mongo");
 };
 
 connectToDBs();
@@ -74,18 +74,9 @@ app.get("/api/lenders/suitable", async (req, res) => {
       sector,
     } = req.query;
 
-    const filter: any = {};
+    const allLenders = await Lender.find();
 
-    if (minDryPowder) filter.dryPowder = { $gte: Number(minDryPowder) };
-    if (maxDryPowder)
-      filter.dryPowder = { ...filter.dryPowder, $lte: Number(maxDryPowder) };
-    if (primaryInvestorType) filter.primaryInvestorType = primaryInvestorType;
-    if (hqCountry) filter.hqCountry = hqCountry;
-    if (sector) filter.description = { $regex: sector, $options: "i" };
-
-    const suitableLendersCount = await Lender.countDocuments(filter);
-
-    res.status(200).json({ suitableLendersCount });
+    res.status(200).json({ suitableLendersCount: allLenders.length });
   } catch (error) {
     console.error(error);
     res
