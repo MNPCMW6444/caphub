@@ -5,7 +5,7 @@ const sendNDA = async (
   accessToken: string,
   templateId: number
 ) => {
-  const apiClient = new docusign.ApiClient();
+  /*  const apiClient = new docusign.ApiClient();
   apiClient.setBasePath("https://demo.docusign.net/restapi");
   apiClient.addDefaultHeader("Authorization", `Bearer ${accessToken}`);
   docusign.Configuration.default.setDefaultApiClient(apiClient);
@@ -34,5 +34,6 @@ const sendNDA = async (
     console.log("Envelope has been sent. ID:", response.envelopeId);
   } catch (error) {
     console.error("Error sending NDA:", error);
-  }
+  } */
 };
+export default docusign;
