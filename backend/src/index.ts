@@ -81,7 +81,7 @@ app.get("/api/lenders/suitable", async (req, res) => {
       filter.dryPowder = { ...filter.dryPowder, $lte: Number(maxDryPowder) };
     if (primaryInvestorType) filter.primaryInvestorType = primaryInvestorType;
     if (hqCountry) filter.hqCountry = hqCountry;
-    if (sector) filter.sector = sector;
+    if (sector) filter.description = { $regex: sector, $options: "i" };
 
     const suitableLendersCount = await Lender.countDocuments(filter);
 
